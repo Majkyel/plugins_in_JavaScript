@@ -1,9 +1,17 @@
 'use strit';
 
 var mainCarousel = document.querySelector('.main-carousel');
+var slidesScript = document.getElementById('slideScript').innerHTML;
 var conButtons = document.querySelector('.container-buttons');
-var progressBar = document.querySelector('.progress-bar');
 var previousWrappedButton = document.querySelector('.restart');
+var progressBar = document.querySelector('.progress-bar');
+var dataSlidesLength = dataSlides.length;
+var allSlides = '';
+
+for (var i = 0; i < dataSlidesLength; i++) {
+    allSlides += Mustache.render(slidesScript, dataSlides[i]);
+}
+mainCarousel.insertAdjacentHTML('afterbegin', allSlides);
 
 var flkty = new Flickity(mainCarousel, {
     cellAlign: 'left',
