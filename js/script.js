@@ -31,7 +31,7 @@ previousWrappedButton.addEventListener('click', function () {
     flkty.select(0);
 });
 
-flkty.on('scroll', function (progress) {
+flkty.on('scroll', function(progress) {
     progress = Math.max(0, Math.min(1, progress));
     progressBar.style.width = progress * 100 + '%';
 });
@@ -45,11 +45,14 @@ window.initMap = function () {
         center: firstSlide
     });
 		
-    for (var i = 0;i < dataSlidesLength; i++) {
+    for (let i = 0;i < dataSlidesLength; i++) {
         var marker = new google.maps.Marker({
             position: dataSlides[i].coords,
             map: map
         }); 
+        marker.addListener('click', function() {
+            flkty.selectCell("#" + dataSlides[i].id);
+        });
     }
     
     for (let i = 0;i < dataSlidesLength; i++) {
@@ -58,4 +61,8 @@ window.initMap = function () {
             map.setZoom(8);
         });
     }
+    
+    flkty.on('change', function(index) {
+        map.panTo(dataSlides[index].coords);
+    });
 };
