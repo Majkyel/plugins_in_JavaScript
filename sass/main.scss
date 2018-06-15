@@ -6,7 +6,7 @@
         margin-right: 10px;
         background-size: cover;
         background-position: center;
-        .container {
+        .container-slides {
             position: relative;
             top: 70%;
             background-color: rgba(0, 0, 0, .8);
@@ -50,5 +50,17 @@
         background-color: darkgray;
         font-weight: bold;
         width: 100px;
+    }
+}
+
+.container-map {
+    text-align: center;
+    max-width: 600px; 
+	margin: 0 auto;
+    padding-bottom: 20px;
+    .map {
+        height: 50vh;
+	    width: 100%; 
+        border: 2px solid black;
     }
 }
