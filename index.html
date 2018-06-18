@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>plugins in JavaScript-10.4</title>
+    <link rel="stylesheet" href="vendor/Normalize.css">
+    <link rel="stylesheet" href="vendor/flickity.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+    <div class="main-carousel">
+        <!-- slides -->
+    </div>
+    <button class="restart">RESTART</button>
+    <div class="progress-bar"></div>
+    <div class="container-buttons">
+        <button class="localization">View cell 1</button>
+        <button class="localization">View cell 2</button>
+        <button class="localization">View cell 3</button>
+        <button class="localization">View cell 4</button>
+        <button class="localization">View cell 5</button>
+    </div> 
+    <div id="page-wrapper" class="container-map">
+	    <h3>My Google Maps</h3>
+        <div id="map" class="map"></div>
+    </div>
+    <!-- Mustache template -->
+    <script id="slideScript" type="x-tmpl-mustache">
+        <div class="carousel-cell" id="{{id}}" style="background-image:url({{image}});">
+            <div class="container-slides">
+                <h2>{{title}}</h2>
+                {{{description}}}
+            </div>
+        </div>
+    </script>
+    <script src="vendor/flickity.pkgd.min.js"></script>
+    <script src="vendor/hash.js"></script>
+    <script src="vendor/Mustache.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGEMJg6gDhZ3CguOaAWe_ECOI1tXoDtFo&callback=initMap"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
